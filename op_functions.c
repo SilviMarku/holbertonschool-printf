@@ -1,5 +1,6 @@
 #include "main.h"
 #include <stdio.h>
+#include <stdarg.h>
 /**
  *
  *
@@ -7,10 +8,13 @@
 int print_char(va_list char_list)
 {
 	char arg = va_arg(char_list, int);
-	putchar(my_char);
+	putchar(arg);
 	return(1);
 }
-
+/**
+ *
+ *
+ */
 int print_string(va_list string_list)
 {
 	int i;
@@ -23,3 +27,8 @@ int print_string(va_list string_list)
 		putchar(str[i]);
 	return(i);
 }
+/**
+ *
+ *
+ */
+

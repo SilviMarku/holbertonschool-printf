@@ -1,6 +1,6 @@
 #include "main.h"
 #include <stdio.h>
-#include <stdard.h>
+#include <stdarg.h>
 /**
  *
  *
@@ -25,7 +25,7 @@ int _printf(const char *format, ...)
 			j = 0;
 			while (p_func[j].format != NULL)
 			{
-				if (format[i+1] == p_func[j].format)
+				if (format[i+1] == *p_func[j].format)
 				{
 					count += p_func[j].print(list);
 					i++;
