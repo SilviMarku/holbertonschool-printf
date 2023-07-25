@@ -12,8 +12,6 @@ int _printf(const char *format, ...)
 	print_func p_func [] = {
 		{"c", print_char},
 		{"s", print_string},
-		{"d", print_int},
-		{"f", print_float},
 
 		{NULL, NULL}
 	};
@@ -31,9 +29,12 @@ int _printf(const char *format, ...)
 				{
 					count += p_func[j].print(list);
 					i++;
+					break;
 				}
 				j++;
 			}
+			if (p_func[j].format == NULL)
+				putchar(format[i]);
 		}
 		else if (format[i] == '%' && format[i+1] == '%')
 		{
