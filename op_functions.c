@@ -27,8 +27,4 @@ int print_string(va_list string_list)
 		putchar(str[i]);
 	return(i);
 }
-/**
- *
- *
- */
 
