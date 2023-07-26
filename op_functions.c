@@ -38,12 +38,11 @@ int print_string(va_list string_list)
  */
 int print_int_rec(long int n, int count)
 {
-	long nr_digits = count;
+	int nr_digits = count;
 	if (n < 0)
 	{
 		putchar('-');
 		n = n *(-1);
-		nr_digits++;
 	}
 	if (n / 10)
 	{
@@ -60,6 +59,7 @@ int print_int(va_list int_list)
 {
 	long int number;
 	number = (long int)(va_arg(int_list, int));
-	return (print_int_rec(number,1));
+	if (number < 0)
+		return (print_int_rec(number,2));
+	return(print_int_rec(number,1));
 			}
-
