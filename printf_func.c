@@ -32,7 +32,7 @@ int _printf(const char *format, ...)
 			if (func == NULL)
 				putchar(format[i]);
 		}
-		if (format[i] == '%' && format[i+1] == '%')
+		else if (format[i] == '%' && format[i+1] == '%')
 		{
 			putchar('%');
 			i++;
