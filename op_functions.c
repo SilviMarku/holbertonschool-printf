@@ -32,4 +32,34 @@ int print_string(va_list string_list)
 		putchar(str[i]);
 	return(i);
 }
+/**
+ *
+ *
+ */
+int print_int_rec(long int n, int count)
+{
+	long nr_digits = count;
+	if (n < 0)
+	{
+		putchar('-');
+		n = n *(-1);
+		nr_digits++;
+	}
+	if (n / 10)
+	{
+		nr_digits = print_int_rec(n/10, count + 1);
+	}
+	putchar(n % 10 + '0');
+	return (nr_digits);
+}
+/**
+ *
+ *
+ */
+int print_int(va_list int_list)
+{
+	long int number;
+	number = (long int)(va_arg(int_list, int));
+	return (print_int_rec(number,1));
+			}
 
