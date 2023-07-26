@@ -4,20 +4,21 @@
 /**
  *print_char - functions that prints char character from va_list
  *@list: list of arguments
+ *@char_list: list of characters
  *Return: Return  1
- *
  */
 int print_char(va_list char_list)
 {
 	char arg = va_arg(char_list, int);
+
 	putchar(arg);
-	return(1);
+	return (1);
 }
 /**
  *print_string - functions that prints string from va_list
  *@list: list of arguments
+ *@string_list: list of string
  *Return: string
- *
  */
 int print_string(va_list string_list)
 {

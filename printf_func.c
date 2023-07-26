@@ -8,14 +8,12 @@
  */
 int _printf(const char *format, ...)
 {
-	int i, j, count = 0;
+	int i, count = 0;
 	va_list list;
-	print_func p_func [] = {
-		{"c", print_char},
-		{"s", print_string},
+	int (*func)(va_list) = NULL;
+	if (format == NULL)
+		return (-1);
 
-		{NULL, NULL}
-	};
 	va_start(list, format);
 
 	i = 0;
@@ -23,18 +21,15 @@ int _printf(const char *format, ...)
 	{
 		if (format[i] == '%' && format[i+1] != '%')
 		{
-			j = 0;
-			while (p_func[j].format != NULL)
-			{
-				if (format[i+1] == *p_func[j].format)
+			func = get_function(format[i+1]);
+				if (func)
 				{
-					count += p_func[j].print(list);
-					i++;
-					break;
+					count += func(list);
+					i += 2;
+					continue;
 				}
-				j++;
-			}
-			if (p_func[j].format == NULL)
+		
+			if (func == NULL)
 				putchar(format[i]);
 		}
 		else if (format[i] == '%' && format[i+1] == '%')
@@ -48,7 +43,6 @@ int _printf(const char *format, ...)
 			putchar(format[i]);
 			count += 1;
 		}
-
 	i++;
 	}
 	va_end(list);

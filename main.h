@@ -13,7 +13,7 @@ typedef struct print_func
 	char *format;
 	int (*print)(va_list list);
 } print_func;
-
+int (*get_function(char c))(va_list);
 int _putchar(char c);
 int print_char(va_list char_list);
 int print_string(va_list string_list);
