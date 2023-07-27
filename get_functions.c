@@ -2,8 +2,9 @@
 #include <stdio.h>
 #include <stdarg.h>
 /**
- *
- *
+ *get_function - get the character and returns the appropriate function
+ *@c: char to be matched
+ *Return: a function
  */
 int (*get_function(char c))(va_list)
 {
