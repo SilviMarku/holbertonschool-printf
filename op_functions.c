@@ -15,10 +15,10 @@ int print_char(va_list char_list)
 	return (1);
 }
 /**
- *print_string - functions that prints string from va_list
- *@string_list: list of string
- *Return: string
- */
+*print_string - functions that prints string from va_list
+*@string_list: list of string
+*Return: string
+*/
 int print_string(va_list string_list)
 {
 	int i;
