@@ -11,32 +11,31 @@ int _printf(const char *format, ...)
 	int i, count = 0;
 	va_list list;
 	int (*func)(va_list) = NULL;
+
 	if (format == NULL)
 		return (-1);
-
 	va_start(list, format);
 	if (format[0] == '%' && format[1] == '\0')
-		return(-1);
+		return (-1);
 	i = 0;
 	while (format != NULL && format[i] != '\0')
 	{
-		if (format[i] == '%' && format[i+1] != '%')
+		if (format[i] == '%' && format[i + 1] != '%')
 		{
-			func = get_function(format[i+1]);
+			func = get_function(format[i + 1]);
 				if (func)
 				{
 					count += func(list);
 					i += 2;
 					continue;
 				}
-		
 			if (func == NULL)
 			{
 				count++;
-				      	putchar(format[i]);
+				putchar(format[i]);
 			}
 		}
-		else if (format[i] == '%' && format[i+1] == '%')
+		else if (format[i] == '%' && format[i + 1] == '%')
 		{
 			putchar('%');
 			i++;
