@@ -2,11 +2,11 @@
 #include <stdio.h>
 #include <stdarg.h>
 /**
- *print_char - functions that prints char character
- *from va_list
- *@char_list: list of characters
- *Return: Return  1
- */
+*print_char - functions that prints char character
+*from va_list
+*@char_list: list of characters
+*Return: Return  1
+*/
 int print_char(va_list char_list)
 {
 	char arg = va_arg(char_list, int);
