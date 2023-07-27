@@ -2,9 +2,9 @@
 #include <stdio.h>
 #include <stdarg.h>
 /**
-*_printf - function that produces output according to a format
- *@format: format to be used to print the output
- *Return: the number of characters printed
+*_printf - function to produce output according to a format
+*@format: format to be used to print the output
+*Return: the number of characters printed
 */
 int _printf(const char *format, ...)
 {
