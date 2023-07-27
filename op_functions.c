@@ -55,10 +55,10 @@ int print_int_rec(long int n, int count)
 	return (nr_digits);
 }
 /**
- *print_int - function to print int
- *@int_list: list of arguments
- *Return: length of the int
- */
+*print_int - function to print int
+*@int_list: list of arguments
+*Return: length of the int
+*/
 int print_int(va_list int_list)
 {
 	long int number;
