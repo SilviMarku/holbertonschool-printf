@@ -33,11 +33,11 @@ int print_string(va_list string_list)
 	return (i);
 }
 /**
- *print_int_rec - recursive function
- *@n: number of characters
- *@count: count number
- *Return: nr of digits
- */
+*print_int_rec - recursive function
+*@n: number of characters
+*@count: count number
+*Return: nr of digits
+*/
 int print_int_rec(long int n, int count)
 {
 	int nr_digits = count;
