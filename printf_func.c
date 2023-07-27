@@ -24,8 +24,7 @@ int _printf(const char *format, ...)
 			func = get_function(format[i + 1]);
 				if (func)
 				{
-					count += func(list);
-					i += 2;
+					count += func(list), i += 2;
 					continue;
 				}
 			if (func == NULL)
