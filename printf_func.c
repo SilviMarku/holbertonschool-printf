@@ -1,11 +1,11 @@
 #include "main.h"
 #include <stdio.h>
 #include <stdarg.h>
- /**
- *_printf - function that produces output according to a format
+/**
+*_printf - function that produces output according to a format
  *@format: format to be used to print the output
  *Return: the number of characters printed
- */
+*/
 int _printf(const char *format, ...)
 {
 	int i, count = 0;
@@ -36,11 +36,9 @@ int _printf(const char *format, ...)
 			}
 		}
 		else if (format[i] == '%' && format[i + 1] == '%')
-		{
 			putchar('%');
 			i++;
 			count += 1;
-		}
 		else
 		{
 			putchar(format[i]);
