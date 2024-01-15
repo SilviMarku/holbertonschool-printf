@@ -3,6 +3,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+
 /**
  **struct print_func -funcion that produces output according to a format
  *@format: imput
